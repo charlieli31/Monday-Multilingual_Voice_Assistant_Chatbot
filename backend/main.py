@@ -13,9 +13,10 @@ import openai
 from functions.text_to_speech import convert_text_to_speech
 from functions.openai_requests import convert_audio_to_text, get_chat_response
 from functions.database import store_messages, reset_messages
+from functions.weather import get_weather
 
 
-# Get Environment Vars
+# Get Environment Variables
 openai.organization = config("OPEN_AI_ORG")
 openai.api_key = config("OPEN_AI_KEY")
 
@@ -55,6 +56,10 @@ async def reset_conversation():
     reset_messages()
     return {"response": "conversation reset"}
 
+# Fetch the weather
+@app.get("/weather/{city_name}")
+def fetch_weather(city_name: str):
+    return {"data": get_weather(city_name)}
 
 # Post bot response
 # Note: Not playing back in browser when using post request.

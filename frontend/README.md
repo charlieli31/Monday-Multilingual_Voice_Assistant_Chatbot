@@ -62,7 +62,6 @@ Update your .env file with the following. You can see your .env by typing sudo n
 OPEN_AI_ORG=enter-you-key-here
 OPEN_AI_KEY=enter-you-key-here
 ELEVEN_LABS_API_KEY=enter-you-key-here
-OPEN_WEATHER_MAP_API_KEY=enter-you-key-here
 ```
 
 ### Start your backend server
@@ -129,5 +128,3 @@ You can check your live server is working by going to:
 ```plain
 http://localhost:4173/health
 ```
-
-This project was inspired by [Code Raiders](https://github.com/coderaidershaun).
